@@ -1,0 +1,32 @@
+<h1 id="tableLabel">Weather forecast</h1>
+
+<p>This component demonstrates choosing component from the server.</p>
+
+<p *ngIf="!forecast"><em>Loading...</em></p>
+<!--<form>
+  <input type="number"/>
+  <input type="submit"/>
+</form>-->
+<form>
+  <label>Input id</label>
+  <input type="number" [(ngModel)]="id"/>
+  <button (click)="show()">Показать</button>
+</form>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecast">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ forecast.date }}</td>
+        <td>{{ forecast.temperatureC }}</td>
+        <td>{{ forecast.temperatureF }}</td>
+        <td>{{ forecast.summary }}</td>
+      </tr>
+    </tbody>
+  </table>
